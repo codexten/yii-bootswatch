@@ -9,14 +9,17 @@
 return [
     'components' => [
         'themeManager' => [
-            'defaultTheme' => 'bootswatchFlatly',
+            'defaultTheme' => 'bootswatch',
             'themes' => [
-                'bootswatchFlatly' => [
-                    'class' => \codexten\yii\web\Theme::class,
+                'bootswatch' => [
+                    'class' => \codexten\yii\bootswatch\BootswatchTheme::class,
                     'pathMap' => [
                         '@app/views/layouts' => [
                             '@codexten/yii/bootswatch/views/layouts',
                         ],
+                    ],
+                    'assets' => [
+                        \codexten\yii\bootswatch\BootswatchAsset::class,
                     ],
                 ],
             ],

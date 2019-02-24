@@ -12,7 +12,7 @@ use yii\bootstrap\NavBar;
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-$this->beginContent('@app/views/layouts/_clear.php')
+$this->beginContent('@codexten/yii/web/views/layouts/base.php')
 ?>
     <div class="wrap">
 
