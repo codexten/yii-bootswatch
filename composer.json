@@ -4,7 +4,8 @@
   "description": "Yii bootswatch theme integration",
   "require": {
     "bower-asset/bootswatch": "~3.0",
-    "yiisoft/yii2-bootstrap": "~2.0.0"    
+    "codexten/yii-web": "~2.0",
+    "yiisoft/yii2-bootstrap": "~2.0"
   },
   "autoload": {
     "psr-4": {
@@ -12,11 +13,14 @@
     }
   },
   "extra": {
-     "branch-alias": {
+    "branch-alias": {
       "dev-master": "2.0.x-dev"
     },
-    "sconfig-plugin": {
-      "bootswatch": "src/config/bootswatch.php"
+    "config-plugin": {
+      "bootswatch": [
+        "$web",
+        "config/bootswatch.php"
+      ]
     }
   }
 }
