@@ -8,10 +8,10 @@
 
 /* @var $this \yii\web\View */
 
+/* @var $content string */
+
 use yii\helpers\ArrayHelper;
 use yii\widgets\Breadcrumbs;
-
-/* @var $content string */
 
 $this->beginContent('@app/views/layouts/base.php')
 ?>
@@ -29,7 +29,9 @@ $this->beginContent('@app/views/layouts/base.php')
         <?php endif; ?>
 
 
-        <?= $content ?>
+        <div style="margin-top: 50px">
+            <?= $content ?>
+        </div>
 
     </div>
 <?php $this->endContent() ?>
