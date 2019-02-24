@@ -13,18 +13,13 @@ return [
             'themes' => [
                 'bootswatchFlatly' => [
                     'class' => \codexten\yii\web\Theme::class,
-                ],
-            ],
-        ],
-        'view' => [
-            'theme' => [
-                'pathMap' => [
-                    '@app/views/layouts' => [
-                        '@codexten/yii/bootswatch/views/layouts',
+                    'pathMap' => [
+                        '@app/views/layouts' => [
+                            '@codexten/yii/bootswatch/views/layouts',
+                        ],
                     ],
                 ],
             ],
         ],
-
     ],
 ];

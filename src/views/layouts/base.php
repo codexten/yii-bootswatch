@@ -12,9 +12,10 @@ use yii\bootstrap\NavBar;
 /* @var $this \yii\web\View */
 /* @var $content string */
 
-$this->beginContent('@frontend/views/layouts/_clear.php')
+$this->beginContent('@app/views/layouts/_clear.php')
 ?>
     <div class="wrap">
+
         <?php
         NavBar::begin([
             'brandLabel' => Yii::$app->name,
@@ -23,20 +24,21 @@ $this->beginContent('@frontend/views/layouts/_clear.php')
                 'class' => 'navbar-inverse navbar-fixed-top',
             ],
         ]); ?>
-        <?php echo Nav::widget([
+
+        <?= Nav::widget([
             'options' => ['class' => 'navbar-nav navbar-right'],
             'items' => [
-                ['label' => Yii::t('frontend', 'Home'), 'url' => ['/site/index']],
-                ['label' => Yii::t('frontend', 'About'), 'url' => ['/page/view', 'slug' => 'about']],
-                ['label' => Yii::t('frontend', 'Articles'), 'url' => ['/article/index']],
-                ['label' => Yii::t('frontend', 'Contact'), 'url' => ['/site/contact']],
+                ['label' => Yii::t('bootswatch', 'Home'), 'url' => ['/site/index']],
+                ['label' => Yii::t('bootswatch', 'About'), 'url' => ['/page/view', 'slug' => 'about']],
+                ['label' => Yii::t('bootswatch', 'Articles'), 'url' => ['/article/index']],
+                ['label' => Yii::t('bootswatch', 'Contact'), 'url' => ['/site/contact']],
                 [
-                    'label' => Yii::t('frontend', 'Signup'),
+                    'label' => Yii::t('bootswatch', 'Signup'),
                     'url' => ['/user/sign-in/signup'],
                     'visible' => Yii::$app->user->isGuest,
                 ],
                 [
-                    'label' => Yii::t('frontend', 'Login'),
+                    'label' => Yii::t('bootswatch', 'Login'),
                     'url' => ['/user/sign-in/login'],
                     'visible' => Yii::$app->user->isGuest,
                 ],
@@ -45,43 +47,33 @@ $this->beginContent('@frontend/views/layouts/_clear.php')
                     'visible' => !Yii::$app->user->isGuest,
                     'items' => [
                         [
-                            'label' => Yii::t('frontend', 'Settings'),
+                            'label' => Yii::t('bootswatch', 'Settings'),
                             'url' => ['/user/default/index'],
                         ],
                         [
-                            'label' => Yii::t('frontend', 'Backend'),
-                            'url' => Yii::getAlias('@backendUrl'),
+                            'label' => Yii::t('bootswatch', 'Backend'),
+                            'url' => Yii::getAlias('@adminUrl'),
                             'visible' => Yii::$app->user->can('manager'),
                         ],
                         [
-                            'label' => Yii::t('frontend', 'Logout'),
+                            'label' => Yii::t('bootswatch', 'Logout'),
                             'url' => ['/user/sign-in/logout'],
                             'linkOptions' => ['data-method' => 'post'],
                         ],
                     ],
                 ],
-                [
-                    'label' => Yii::t('frontend', 'Language'),
-                    'items' => array_map(function ($code) {
-                        return [
-                            'label' => Yii::$app->params['availableLocales'][$code],
-                            'url' => ['/site/set-locale', 'locale' => $code],
-                            'active' => Yii::$app->language === $code,
-                        ];
-                    }, array_keys(Yii::$app->params['availableLocales'])),
-                ],
             ],
         ]); ?>
         <?php NavBar::end(); ?>
 
-        <?php echo $content ?>
+        <?= $content ?>
 
     </div>
 
     <footer class="footer">
         <div class="container">
-            <p class="pull-left">&copy; My Company <?php echo date('Y') ?></p>
-            <p class="pull-right"><?php echo Yii::powered() ?></p>
+            <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+            <p class="pull-right"><?= Yii::powered() ?></p>
         </div>
     </footer>
 <?php $this->endContent() ?>
