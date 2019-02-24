@@ -12,6 +12,9 @@
     }
   },
   "extra": {
+     "branch-alias": {
+      "dev-master": "2.0.x-dev"
+    },
     "sconfig-plugin": {
       "bootswatch": "src/config/bootswatch.php"
     }
