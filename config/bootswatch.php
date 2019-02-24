@@ -16,5 +16,15 @@ return [
                 ],
             ],
         ],
+        'view' => [
+            'theme' => [
+                'pathMap' => [
+                    '@app/views/layouts' => [
+                        '@codexten/yii/bootswatch/views/layouts',
+                    ],
+                ],
+            ],
+        ],
+
     ],
 ];
