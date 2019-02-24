@@ -1,0 +1,19 @@
+{
+  "name": "codexten/yii-bootswatch",
+  "type": "yii2-extension",
+  "description": "Yii bootswatch theme integration",
+  "require": {
+    "bower-asset/bootswatch": "~3.0",
+    "yiisoft/yii2-bootstrap": "~2.0.0"    
+  },
+  "autoload": {
+    "psr-4": {
+      "codexten\\yii\\bootswatch\\": "src"
+    }
+  },
+  "extra": {
+    "sconfig-plugin": {
+      "bootswatch": "src/config/bootswatch.php"
+    }
+  }
+}
