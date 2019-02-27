@@ -13,13 +13,17 @@ return [
             'themes' => [
                 'bootswatch' => [
                     'class' => \codexten\yii\bootswatch\BootswatchTheme::class,
-                    'pathMap' => [
-                        '@app/views/layouts' => [
-                            '@codexten/yii/bootswatch/views/layouts',
-                        ],
-                    ],
                     'assets' => [
                         \codexten\yii\bootswatch\BootswatchAsset::class,
+                    ],
+                ],
+            ],
+        ],
+        'view' => [
+            'theme' => [
+                'pathMap' => [
+                    '@app/views' => [
+                        '@codexten/yii/bootswatch/views',
                     ],
                 ],
             ],

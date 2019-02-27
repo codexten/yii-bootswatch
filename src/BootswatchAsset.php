@@ -31,19 +31,19 @@ class BootswatchAsset extends AssetBundle
         $this->css = [
             'bootstrap.min.css',
         ];
-//        // optimized asset publication : only publish bootswatch theme folders and font folder.
-//        $this->publishOptions['beforeCopy'] = function ($from, $to) {
-//            if (is_dir($from)) {
-//                $name = pathinfo($from, PATHINFO_BASENAME);
-//
-//                return !in_array($name,
-//                    ['2', 'api', 'assets', 'bower_components', 'tests', 'help', 'global', 'default']);
-//            } else {
-//                $ext = pathinfo($from, PATHINFO_EXTENSION);
-//
-//                return in_array($ext, ['css', 'eot', 'svg', 'ttf', 'woff', 'woff2']);
-//            }
-//        };
+        // optimized asset publication : only publish bootswatch theme folders and font folder.
+        $this->publishOptions['beforeCopy'] = function ($from, $to) {
+            if (is_dir($from)) {
+                $name = pathinfo($from, PATHINFO_BASENAME);
+
+                return !in_array($name,
+                    ['2', 'api', 'assets', 'bower_components', 'tests', 'help', 'global', 'default']);
+            } else {
+                $ext = pathinfo($from, PATHINFO_EXTENSION);
+
+                return in_array($ext, ['css', 'eot', 'svg', 'ttf', 'woff', 'woff2']);
+            }
+        };
         parent::init();
     }
 }

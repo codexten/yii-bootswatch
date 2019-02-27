@@ -15,7 +15,6 @@ use yii\widgets\Breadcrumbs;
 
 $this->beginContent('@app/views/layouts/base.php')
 ?>
-    <div class="container">
 
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
@@ -33,5 +32,4 @@ $this->beginContent('@app/views/layouts/base.php')
             <?= $content ?>
         </div>
 
-    </div>
 <?php $this->endContent() ?>
