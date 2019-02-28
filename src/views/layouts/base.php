@@ -16,7 +16,7 @@ $this->beginContent('@codexten/yii/web/views/layouts/base.php')
 
         <?= $this->render('@app/views/layouts/blocks/topMenu.php') ?>
 
-        <div class="container" style="padding-top: 75px">
+        <div class="container">
 
             <?= $content ?>
 
