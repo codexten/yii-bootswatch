@@ -5,7 +5,7 @@
   "require": {
     "bower-asset/bootswatch": "~3.0",
     "codexten/yii-web": "~2.0",
-    "yiisoft/yii2-bootstrap": "~2.0"
+    "codexten/yii-bootstrap3": "~2.0"
   },
   "autoload": {
     "psr-4": {
