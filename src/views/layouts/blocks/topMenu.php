@@ -24,8 +24,8 @@ NavBar::begin([
     'items' => [
         ['label' => Yii::t('bootswatch', 'Home'), 'url' => ['/site/index']],
         [
-            'label' => Yii::t('bootswatch', 'Signup'),
-            'url' => ['/user/sign-in/signup'],
+            'label' => Yii::t('app', 'Signup'),
+            'url' => Yii::$app->user->registerUrl,
             'visible' => Yii::$app->user->isGuest,
         ],
         [
@@ -34,25 +34,11 @@ NavBar::begin([
             'visible' => Yii::$app->user->isGuest,
         ],
         [
-            'label' => Yii::$app->user->isGuest ? '' : Yii::$app->user->identity->getPublicIdentity(),
+            'label' => Yii::t('app', 'Logout'),
+            'url' => Yii::$app->user->logoutUrl,
             'visible' => !Yii::$app->user->isGuest,
-            'items' => [
-                [
-                    'label' => Yii::t('bootswatch', 'Settings'),
-                    'url' => ['/user/default/index'],
-                ],
-                [
-                    'label' => Yii::t('bootswatch', 'Backend'),
-                    'url' => Yii::getAlias('@adminUrl'),
-                    'visible' => Yii::$app->user->can('manager'),
-                ],
-                [
-                    'label' => Yii::t('bootswatch', 'Logout'),
-                    'url' => ['/user/sign-in/logout'],
-                    'linkOptions' => ['data-method' => 'post'],
-                ],
-            ],
         ],
     ],
 ]); ?>
+
 <?php NavBar::end(); ?>
