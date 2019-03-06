@@ -15,7 +15,7 @@ NavBar::begin([
     'brandLabel' => Yii::$app->name,
     'brandUrl' => Yii::$app->homeUrl,
     'options' => [
-        'class' => 'navbar-inverse navbar-fixed-top',
+        'class' => 'navbar-inverse',
     ],
 ]); ?>
 
@@ -23,9 +23,6 @@ NavBar::begin([
     'options' => ['class' => 'navbar-nav navbar-right'],
     'items' => [
         ['label' => Yii::t('bootswatch', 'Home'), 'url' => ['/site/index']],
-        ['label' => Yii::t('bootswatch', 'About'), 'url' => ['/page/view', 'slug' => 'about']],
-        ['label' => Yii::t('bootswatch', 'Articles'), 'url' => ['/article/index']],
-        ['label' => Yii::t('bootswatch', 'Contact'), 'url' => ['/site/contact']],
         [
             'label' => Yii::t('bootswatch', 'Signup'),
             'url' => ['/user/sign-in/signup'],
@@ -33,7 +30,7 @@ NavBar::begin([
         ],
         [
             'label' => Yii::t('bootswatch', 'Login'),
-            'url' => ['/user/sign-in/login'],
+            'url' => Yii::$app->user->loginUrl,
             'visible' => Yii::$app->user->isGuest,
         ],
         [
