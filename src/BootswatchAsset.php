@@ -9,12 +9,14 @@
 namespace codexten\yii\bootswatch;
 
 use yii\web\AssetBundle;
+use yii\web\YiiAsset;
 
 class BootswatchAsset extends AssetBundle
 {
     public $sourcePath = '@bower/bootswatch';
     public $depends = [
         'yii\bootstrap\BootstrapAsset',
+        YiiAsset::class,
     ];
 
     /**
