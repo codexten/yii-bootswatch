@@ -6,15 +6,18 @@
  * Time: 7:27 PM
  */
 
+use codexten\yii\bootswatch\BootswatchAsset;
+use codexten\yii\bootswatch\BootswatchTheme;
+
 return [
     'components' => [
         'themeManager' => [
             'defaultTheme' => 'bootswatch',
             'themes' => [
                 'bootswatch' => [
-                    'class' => \codexten\yii\bootswatch\BootswatchTheme::class,
+                    'class' => BootswatchTheme::class,
                     'assets' => [
-                        \codexten\yii\bootswatch\BootswatchAsset::class,
+                        BootswatchAsset::class,
                     ],
                 ],
             ],
@@ -24,6 +27,9 @@ return [
                 'pathMap' => [
                     '@app/views' => [
                         '@codexten/yii/bootswatch/views',
+                    ],
+                    '@app/widgets/views' => [
+                        '@codexten/yii/bootswatch/widgets/views',
                     ],
                 ],
             ],
